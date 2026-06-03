@@ -1,4 +1,6 @@
 using CarDealership.Api.Models;
+using CarDealership.Api.Shared.Common;
+using CarDealership.Api.Shared.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +8,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("http://localhost:3000", "http://localhost:3001")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -27,6 +29,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<CorrelationIdMiddleware>();
+app.UseMiddleware<RequestLoggingMiddleware>();
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+
 app.UseCors();
 app.UseHttpsRedirection();
 
@@ -44,6 +50,13 @@ app.MapGet("/health", () =>
 })
 .WithName("Health")
 .WithOpenApi();
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapGet("/test/error", (HttpContext _) => throw new InvalidOperationException("Unhandled error test"))
+        .WithName("UnhandledErrorTest")
+        .WithOpenApi();
+}
 
 app.Run();
 
