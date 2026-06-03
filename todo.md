@@ -169,39 +169,39 @@ For every prompt:
 
 ### Backend Shared Components
 
-- [ ] Add common `Result` type.
-- [ ] Add success result pattern.
-- [ ] Add failure result pattern.
-- [ ] Add standard API error response.
-- [ ] Add global exception handling middleware.
-- [ ] Add correlation ID middleware.
-- [ ] Add request logging middleware.
-- [ ] Add base entity abstraction.
-- [ ] Add `Id`.
-- [ ] Add `CreatedAtUtc`.
-- [ ] Add `UpdatedAtUtc`.
-- [ ] Add `CreatedByUserId`.
-- [ ] Add `UpdatedByUserId`.
-- [ ] Add `IsDeleted`.
-- [ ] Add `DeletedAtUtc`.
-- [ ] Add `TenantEnvironment` enum with `Sandbox` and `Production`.
+- [x] Add common `Result` type.
+- [x] Add success result pattern.
+- [x] Add failure result pattern.
+- [x] Add standard API error response.
+- [x] Add global exception handling middleware.
+- [x] Add correlation ID middleware.
+- [x] Add request logging middleware.
+- [x] Add base entity abstraction.
+- [x] Add `Id`.
+- [x] Add `CreatedAtUtc`.
+- [x] Add `UpdatedAtUtc`.
+- [x] Add `CreatedByUserId`.
+- [x] Add `UpdatedByUserId`.
+- [x] Add `IsDeleted`.
+- [x] Add `DeletedAtUtc`.
+- [x] Add `TenantEnvironment` enum with `Sandbox` and `Production`.
 
 ### Tests
 
-- [ ] Unit test `Result.Success`.
-- [ ] Unit test `Result.Failure`.
-- [ ] Unit test error response mapping.
-- [ ] Integration test unhandled exception returns standard error shape.
-- [ ] Integration test correlation ID is returned in response headers.
+- [x] Unit test `Result.Success`.
+- [x] Unit test `Result.Failure`.
+- [x] Unit test error response mapping.
+- [x] Integration test unhandled exception returns standard error shape.
+- [x] Integration test correlation ID is returned in response headers.
 - [ ] Integration test request without correlation ID receives generated ID.
 - [ ] Integration test request with correlation ID preserves/returns it.
 
 ### Done
 
-- [ ] Middleware wired into API pipeline.
-- [ ] No unused middleware left disconnected.
-- [ ] No unused abstractions left without immediate purpose.
-- [ ] Tests pass.
+- [x] Middleware wired into API pipeline.
+- [x] No unused middleware left disconnected.
+- [x] No unused abstractions left without immediate purpose.
+- [x] Tests pass.
 
 ---
 
