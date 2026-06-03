@@ -106,52 +106,52 @@ For every prompt:
 
 ### Backend
 
-- [ ] Create `/backend`.
-- [ ] Create .NET solution.
-- [ ] Create ASP.NET Core Web API project.
-- [ ] Create backend unit test project.
-- [ ] Create backend integration test project.
-- [ ] Add `/src` folder structure.
-- [ ] Add health endpoint `GET /health`.
-- [ ] Health endpoint returns HTTP 200.
-- [ ] Health endpoint returns app metadata.
-- [ ] Add basic API configuration files.
-- [ ] Add local appsettings.
-- [ ] Add development appsettings.
+- [x] Create `/backend`.
+- [x] Create .NET solution.
+- [x] Create ASP.NET Core Web API project.
+- [x] Create backend unit test project.
+- [x] Create backend integration test project.
+- [x] Add `/src` folder structure.
+- [x] Add health endpoint `GET /health`.
+- [x] Health endpoint returns HTTP 200.
+- [x] Health endpoint returns app metadata.
+- [x] Add basic API configuration files.
+- [x] Add local appsettings.
+- [x] Add development appsettings.
 - [ ] Add test appsettings if needed.
 
 ### Frontend
 
-- [ ] Create `/frontend`.
-- [ ] Create Next.js app.
-- [ ] Enable TypeScript.
-- [ ] Add basic landing page.
-- [ ] Add frontend test setup.
-- [ ] Add lint setup.
-- [ ] Add build script.
+- [x] Create `/frontend`.
+- [x] Create Next.js app.
+- [x] Enable TypeScript.
+- [x] Add basic landing page.
+- [x] Add frontend test setup.
+- [x] Add lint setup.
+- [x] Add build script.
 
 ### Docs
 
-- [ ] Create `/docs`.
-- [ ] Add local setup instructions.
-- [ ] Add backend run command.
-- [ ] Add frontend run command.
-- [ ] Add backend test command.
-- [ ] Add frontend test command.
+- [x] Create `/docs`.
+- [x] Add local setup instructions.
+- [x] Add backend run command.
+- [x] Add frontend run command.
+- [x] Add backend test command.
+- [x] Add frontend test command.
 
 ### Infrastructure
 
-- [ ] Create `/infra`.
-- [ ] Add placeholder Azure folder.
-- [ ] Add placeholder deployment notes.
+- [x] Create `/infra`.
+- [x] Add placeholder Azure folder.
+- [x] Add placeholder deployment notes.
 
 ### Tests
 
-- [ ] Backend test verifies `/health` returns 200.
-- [ ] Frontend smoke test verifies landing page renders.
-- [ ] Backend builds successfully.
-- [ ] Frontend builds successfully.
-- [ ] README explains local startup.
+- [x] Backend test verifies `/health` returns 200.
+- [x] Frontend smoke test verifies landing page renders.
+- [x] Backend builds successfully.
+- [x] Frontend builds successfully.
+- [x] README explains local startup.
 
 ### Done
 

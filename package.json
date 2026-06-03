@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "dotnet test backend/CarDealership.sln && npm test --prefix frontend"
+  }
+}
