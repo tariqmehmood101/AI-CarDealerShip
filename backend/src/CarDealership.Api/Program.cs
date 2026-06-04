@@ -1,6 +1,9 @@
 using CarDealership.Api.Models;
+using CarDealership.Api.Persistence;
+using CarDealership.Api.Persistence.Interceptors;
 using CarDealership.Api.Shared.Common;
 using CarDealership.Api.Shared.Middleware;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,12 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
+});
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.AddInterceptors(new DateTrackingSaveChangesInterceptor());
 });
 
 builder.Services.AddEndpointsApiExplorer();

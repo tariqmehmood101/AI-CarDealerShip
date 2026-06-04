@@ -1,0 +1,8 @@
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.csproj.AssemblyReference.cache
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.GeneratedMSBuildEditorConfig.editorconfig
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.AssemblyInfoInputs.cache
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.AssemblyInfo.cs
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.csproj.CoreCompileInputs.cache
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.MvcApplicationPartsAssemblyInfo.cs
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.MvcApplicationPartsAssemblyInfo.cache
+d:\CarDealership\backend\obj_test\Debug\net8.0\CarDealership.Api.sourcelink.json

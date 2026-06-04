@@ -45,4 +45,16 @@ public class ResultTests
         Assert.Null(result.Value);
         Assert.Equal("Bad request", result.Error);
     }
+
+    [Fact]
+    public void Failure_Result_Throws_WhenErrorIsEmpty()
+    {
+        Assert.Throws<ArgumentException>(() => Result.Failure("   "));
+    }
+
+    [Fact]
+    public void Success_GenericResult_Throws_WhenValueIsNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => Result<string>.Success(null!));
+    }
 }
