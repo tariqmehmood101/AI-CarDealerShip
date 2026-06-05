@@ -326,48 +326,48 @@ For every prompt:
 
 ### Tenant Model
 
-- [ ] Tenant represents one dealership location.
-- [ ] Tenant has unique slug.
-- [ ] Tenant has legal name.
-- [ ] Tenant has subscription/status field.
-- [ ] Tenant status supports Trial, Active, Suspended, Canceled.
+- [x] Tenant represents one dealership location.
+- [x] Tenant has unique slug.
+- [x] Tenant has legal name.
+- [x] Tenant has subscription/status field.
+- [x] Tenant status supports Trial, Active, Suspended, Canceled.
 
 ### Environment Model
 
-- [ ] Every tenant receives Sandbox environment.
-- [ ] Every tenant receives Production environment.
-- [ ] Sandbox and Production environment records are distinct.
+- [x] Every tenant receives Sandbox environment.
+- [x] Every tenant receives Production environment.
+- [x] Sandbox and Production environment records are distinct.
 - [ ] Environment value is required on environment-scoped data.
 
 ### Tenant Settings
 
-- [ ] Create default tenant settings.
-- [ ] Include dealer profile placeholders.
-- [ ] Include branding placeholders.
-- [ ] Include feature flag defaults.
+- [x] Create default tenant settings.
+- [x] Include dealer profile placeholders.
+- [x] Include branding placeholders.
+- [x] Include feature flag defaults.
 - [ ] Include deal numbering settings.
 - [ ] Include session timeout default of 15 minutes.
 
 ### API
 
-- [ ] Add development-only `POST /api/tenants/bootstrap`.
-- [ ] Add placeholder `GET /api/tenants/current`.
-- [ ] Ensure bootstrap is not available in production.
+- [x] Add development-only `POST /api/tenants/bootstrap`.
+- [x] Add placeholder `GET /api/tenants/current`.
+- [x] Ensure bootstrap is not available in production.
 
 ### Tests
 
-- [ ] Unit test tenant creation creates Sandbox and Production.
-- [ ] Integration test tenant settings are created.
-- [ ] Integration test duplicate tenant slug rejected.
-- [ ] Integration test duplicate legal name behavior is defined.
-- [ ] Integration test environment records are distinct.
-- [ ] Integration test bootstrap endpoint disabled outside development.
+- [x] Unit test tenant creation creates Sandbox and Production.
+- [x] Integration test tenant settings are created.
+- [x] Integration test duplicate tenant slug rejected.
+- [x] Integration test duplicate legal name behavior is defined.
+- [x] Integration test environment records are distinct.
+- [x] Integration test bootstrap endpoint disabled outside development.
 
 ### Done
 
-- [ ] Tenant creation is reusable by future registration.
-- [ ] No auth logic duplicated here.
-- [ ] Tests pass.
+- [x] Tenant creation is reusable by future registration.
+- [x] No auth logic duplicated here.
+- [x] Tests pass.
 
 ---
 

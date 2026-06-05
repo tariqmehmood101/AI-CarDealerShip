@@ -1,6 +1,7 @@
 using CarDealership.Api.Models;
 using CarDealership.Api.Persistence;
 using CarDealership.Api.Persistence.Interceptors;
+using CarDealership.Api.Services;
 using CarDealership.Api.Shared.Common;
 using CarDealership.Api.Shared.Middleware;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.AddInterceptors(new DateTrackingSaveChangesInterceptor());
 });
 
+builder.Services.AddScoped<ITenantService, TenantService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -36,6 +39,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    // Seed development data
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        await dbContext.SeedDevelopmentDataAsync();
+    }
 }
 
 app.UseMiddleware<CorrelationIdMiddleware>();
@@ -65,7 +75,33 @@ if (app.Environment.IsDevelopment())
     app.MapGet("/test/error", (HttpContext _) => throw new InvalidOperationException("Unhandled error test"))
         .WithName("UnhandledErrorTest")
         .WithOpenApi();
+
+    // Bootstrap endpoint (development only) - internal use for test data setup
+    app.MapPost("/api/tenants/bootstrap", async (CreateTenantRequest request, ITenantService tenantService) =>
+    {
+        var result = await tenantService.CreateTenantAsync(request);
+
+        if (result.IsSuccess)
+        {
+            return Results.Created($"/api/tenants/{result.Value!.TenantId}", result.Value);
+        }
+
+        return Results.BadRequest(new { error = result.Error });
+    })
+    .WithName("BootstrapTenant")
+    .WithOpenApi()
+    .WithDescription("Internal development endpoint for creating test tenants with both Sandbox and Production environments.");
 }
+
+// Current tenant endpoint (placeholder for future auth integration)
+app.MapGet("/api/tenants/current", () =>
+{
+    // Placeholder: will be populated after auth implementation
+    return Results.NotFound();
+})
+.WithName("GetCurrentTenant")
+.WithOpenApi()
+.WithDescription("Returns the current tenant context. Requires authentication (not yet implemented).");
 
 app.Run();
 

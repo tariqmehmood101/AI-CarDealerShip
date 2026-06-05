@@ -102,7 +102,9 @@ public sealed class TenantSettingsConfiguration : IEntityTypeConfiguration<Tenan
             .HasColumnType("datetime2");
 
         builder.Property(ts => ts.IsDeleted)
-            .HasDefaultValue(false);
+            .IsRequired()
+            .HasDefaultValue(false)
+            .ValueGeneratedNever();
 
         // Constraints and indexes
         builder.HasIndex(ts => new { ts.TenantId, ts.Environment })
